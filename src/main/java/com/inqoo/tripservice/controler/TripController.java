@@ -37,7 +37,7 @@ public class TripController {
         return ResponseEntity.created(savedCityUri).build();
     }
 
-    @GetMapping(path = "/trips", produces = "application/json")
+    @GetMapping(path = "/", produces = "application/json")
     public List<Trip> trips(@RequestParam(name="tripDestinationFragment", required = false) String nameFragment){
         System.out.println("Zapytanie zawierało parametr 'tripDestinationFragment' o wartości: "+nameFragment);
         return tripService.getAllTrips(nameFragment);
